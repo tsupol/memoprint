@@ -1,0 +1,74 @@
+<div class="panel widget">
+    <div class="panel-heading vd_bg-yellow">
+        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-pie"></i></span>Activities</h3>
+        <div class="vd_panel-menu">
+
+            <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-minus3"></i> </div>
+
+        </div>
+    </div>
+    <div class="panel-body-list">
+        <div class="content-list content-image menu-action-right">
+            <div id="dash-scroll" data-rel="scroll" data-scrollheight="400">
+                <ul class="list-wrapper pd-lr-15">
+
+                    <!-- loop -->
+
+                    <li ng-repeat="message in dashboard.data.task" class="type{{message.type}}">
+                        <div class="menu-icon">
+
+                            <!-- if -->
+
+                            <a ng-if="message.type==6" target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">
+                                <img ng-src="{{ message.fan_profile }}">
+                            </a>
+                            <a ng-if="message.type>0 && message.type<6" target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">
+                                <img ng-src="{{ message.fan_profile }}">
+                            </a>
+                            <i ng-if="message.type>=21" class=" fa fa-cogs"></i>
+
+                            <!-- end if -->
+
+                        </div>
+
+                        <!-- if -->
+
+                        <div ng-if="message.type==6" class="menu-text">
+                            <i class="fa fa-thumbs-up"></i> <b>{{ message.brand_name }}</b> liked {{ message.count }} media of <a target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">{{ message.fan_name }}</a>
+                        </div>
+
+                        <div ng-if="message.type>0 && message.type<6" class="menu-text">
+                            <i class="fa" ng-class="{1:'fa-arrow-right', 2:'fa-level-up', 3:'fa-arrow-left', 4:'fa-level-down', 5:'fa-exchange'}[message.type]"></i>
+                            <b>{{ message.brand_name }}</b> {{ message.action }} <a target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">{{ message.fan_name }}</a>
+                        </div>
+
+                        <div ng-if="message.type>=21" class="menu-text">
+                            {{ message.message }}
+                        </div>
+
+                        <!-- end if -->
+
+                        <div class="menu-text">
+                            <div class="menu-info">
+                                <span am-time-ago="message.time" class="menu-date"></span><span class="menu-date run-time"> ({{ message.run_time }}) </span>
+                            </div>
+                        </div>
+                        <div class="menu-action">
+                            <div class="menu-action-icon vd_red"   data-original-title="Reject" data-rel="tooltip-bottom">
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- end loop -->
+
+                </ul>
+            </div>
+            <div class="closing text-center">
+                <a href="#">See All Recent Reviews <i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+</div> <!-- tabs-widget -->

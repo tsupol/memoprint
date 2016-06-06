@@ -1,0 +1,10 @@
+<Limit GET POST PUT DELETE>
+  Allow from all
+</Limit>
+
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^$ http://103.245.167.79/memoprint/public/mvent [R=301,L]
+#RewriteRule ^$ http://mtpcpos.info/public [R=301,L]
+</IfModule>

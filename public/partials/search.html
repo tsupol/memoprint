@@ -1,0 +1,38 @@
+<div class="vd_title-section clearfix">
+    <div class="insta-wrapper row">
+        <div class="col-md-5">
+            <h3 class="tag-title"><i class="fa fa-search"></i>{{ insta.searchTerm }}</h3>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="vd_content-section clearfix">
+    <div class="row">
+        <div class="col-md-6">
+            <a class="user-elem" href="#/user/{{ user.id }}" ng-repeat="user in insta.base.media.user.data">
+                <img ng-src="{{ user.profile_picture }}">
+                <p>{{ user.username }}</p>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a class="user-elem" href="#/tag/{{ tag.name }}" ng-repeat="tag in insta.base.media.tag.data">
+                <i class="fa fa-tag"></i>
+                <p>{{ tag.name }} <span>( {{ tag.media_count }} )</span></p>
+            </a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- End Media Loop -->
+
+<div ng-show="insta.base.loading" id="loader-cont">
+    <div class="spinwrap">
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+</div>

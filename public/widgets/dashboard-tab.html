@@ -1,0 +1,123 @@
+<div class="tabs widget">
+    <ul class="nav nav-tabs widget">
+        <li class="active">
+            <a data-toggle="tab" href="#home-tab">
+                <span class="menu-icon"><i class="fa fa-comments"></i></span>
+                Recent Follows
+                <span class="menu-active"><i class="fa fa-caret-up"></i></span>
+            </a></li>
+        <li>
+            <a data-toggle="tab" href="#posts-tab">
+                <span class="menu-icon"><i class="fa fa-rocket"></i></span>
+                Activities
+                <span class="menu-active"><i class="fa fa-caret-up"></i></span>
+            </a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="home-tab" class="tab-pane active">
+            <div class="content-list content-image menu-action-right">
+                <div data-rel="scroll" data-scrollheight="550">
+                    <ul class="list-wrapper pd-lr-15">
+
+                        <!-- loop -->
+
+                        <li ng-repeat="like in dashboard.data.like">
+                            <div class="menu-icon"><a target="_blank" href="{{ like.media_link }}"><img alt="example image" ng-src="{{ like.media_url }}"></a></div>
+                            <div class="menu-text">
+                                <b>{{ like.brand_name }}</b> liked an image of <a target="_blank" href="{{ like.fan_link }}">{{ like.fan_name }}</a>
+                            </div>
+                            <div class="menu-text">
+                                <div class="menu-info">
+                                    <span class="menu-date">{{ like.time*1000 | timeago }}</span>
+                                </div>
+                            </div>
+                            <div class="menu-action">
+                                <div class="menu-action-icon vd_red"   data-original-title="Reject" data-rel="tooltip-bottom">
+                                    <i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- end loop -->
+
+                    </ul>
+                </div>
+                <div class="closing text-center">
+                    <a href="#">See All Recent Reviews <i class="fa fa-angle-double-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div id="posts-tab" class="tab-pane sidebar-widget">
+            <div class="content-list">
+                <div data-rel="scroll">
+                    <ul  class="list-wrapper pd-lr-15">
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                        <li> <a href="#">
+                            <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                            <div class="menu-text"> Someone has give you a surprise
+                                <div class="menu-info"><span class="menu-date"> ~ 12 Minutes Ago</span></div>
+                            </div>
+                        </a> </li>
+                    </ul>
+                </div>
+                <div class="closing text-center" style="">
+                    <a href="#">See All Activities <i class="fa fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- tabs-widget -->

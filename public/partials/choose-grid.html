@@ -1,0 +1,38 @@
+
+<!-- Media Loop -->
+
+<div class="vd_content-section clearfix">
+    <div class="insta-wrapper row" infinite-scroll="ctrl.loadMore()" infinite-scroll-disabled='ctrl.loading' infinite-scroll-distance="0">
+        <div class="col-sm-4 col-md-2" ng-repeat="media in ctrl.media.data">
+            <div class="elem">
+                <a class="elem-header" target="_blank" href="https://www.instagram.com/{{ media.user_name }}">
+                    <img ng-src="{{ media.profile_picture }}">
+                    <p>{{ media.user_name }}</p>
+                </a>
+                <div class="elem-img">
+                    <img ng-src="{{ media.img_high }}">
+                </div>
+                <div class="elem-footer">
+                    <div class="btn btn-success" ng-hide="media.is_use" ng-click="ctrl.changeVisible(media, true)">
+                        Show
+                    </div>
+                    <div class="btn btn-danger" ng-show="media.is_use" ng-click="ctrl.changeVisible(media, false)">
+                        Hide
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- End Media Loop -->
+
+<div ng-show="ctrl.loading" id="loader-cont">
+    <div class="spinwrap">
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+</div>

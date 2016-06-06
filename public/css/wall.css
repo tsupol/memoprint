@@ -1,0 +1,158 @@
+body { padding: 0; margin: 0;
+    overflow: hidden; background-color: #040404;
+    font-family: Quicksand;
+}
+#wrapper {
+    float: left;
+    width: 101%;
+    position:relative;
+    overflow: hidden;
+}
+.card-wrap {
+    float: left;
+    display: block;
+    width: 16.66%;
+    padding-top: 16.67%;
+    /*width: 20%;*/
+    /*padding-top: 20%;*/
+
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+
+    overflow: visible;
+
+}
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+
+    /*-webkit-animation-name: spinner;*/
+    /*-webkit-animation-timing-function: ease-in-out;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+    /*-webkit-animation-duration: 4s;*/
+
+    /*animation-name: spinner;*/
+    /*animation-timing-function: ease-in-out;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-duration: 4s;*/
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    /*transition: all 1.0s ease-in-out;*/
+}
+img.profile {
+    width: 40%;
+    height: 40%;
+    left: 30%;
+    top: 30%;
+    position: absolute;
+    border: 0px solid #fff;
+    border-radius: 50%;
+    display: none;
+}
+.showpro img.profile {
+    display: block;
+}
+.username {
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 75%;
+    position: absolute;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+}
+.face {
+    /*background-color: #8f0000;*/
+    background-color: #57BFBB;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-size:100%;
+}
+.face.back {
+    display: block;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    box-sizing: border-box;
+}
+
+#footer {
+    background-color: #fff;
+    color: #000;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    float: left;
+    width:100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+#footer span {
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 26px;
+}
+
+
+/*animation*/
+
+@-webkit-keyframes rotate1 {
+    from {-webkit-transform: rotateY(0deg)}
+    to {-webkit-transform: rotateY(180deg)}
+}
+@-webkit-keyframes rotate2 {
+    from {-webkit-transform: rotateY(180deg)}
+    to {-webkit-transform: rotateY(360deg)}
+}
+
+.card-wrap.front .card {
+    -webkit-animation-name: rotate2;
+    -webkit-animation-duration: 3s;
+}
+
+.card-wrap.back .card {
+    -webkit-animation-name: rotate1;
+    -webkit-animation-duration: 3s;
+    -webkit-transform: rotateY(180deg);
+}
+
+#imgloader, #profileloader { display: none; }
+#imgloader img, #profileloader img { display: none; }
+
+/*cluster*/
+
+.face.big {
+    background-size:200%;
+}
+.face.b0 {
+    background-position: left top;
+}
+.face.b1 {
+    background-position: right top;
+}
+.face.b2 {
+    background-position: left bottom;
+}
+.face.b3 {
+    background-position: right bottom;
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .username { font-size: 16px; }
+    #footer { font-size: 30px; }
+
+}

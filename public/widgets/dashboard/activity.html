@@ -1,0 +1,140 @@
+<div class="panel widget">
+    <div class="panel-heading vd_bg-yellow">
+        <h3 class="panel-title"> <span class="menu-icon"> <i class="icon-pie"></i></span>Activities</h3>
+        <div class="vd_panel-menu">
+
+            <div class="filter-btns">
+                <div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font" data-type="1" >
+                    <i class="fa fa-arrow-right toggle"></i>
+                </div>
+                <div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font" data-type="2">
+                    <i class="fa fa-level-up toggle"></i>
+                </div>
+                <div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font" data-type="3">
+                    <i class="fa fa-arrow-left toggle"></i>
+                </div>
+                <div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font" data-type="4">
+                    <i class="fa fa-level-down toggle"></i>
+                </div>
+                <div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font" data-type="5">
+                    <i class="fa fa-exchange toggle"></i>
+                </div>
+                <div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font" data-type="6">
+                    <i class="fa fa-thumbs-up toggle"></i>
+                </div>
+
+                <!--<div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font"-->
+                     <!--ng-class="{true: 'active', false: ''}[dashboard.view.follow]" ng-click="dashboard.view.follow = !dashboard.view.follow" data-type="1" >-->
+                    <!--<i class="fa fa-arrow-right toggle"></i>-->
+                <!--</div>-->
+                <!--<div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font"-->
+                     <!--ng-class="{true: 'active', false: ''}[dashboard.view.unfollow]" ng-click="dashboard.view.unfollow = !dashboard.view.unfollow" data-type="2">-->
+                    <!--<i class="fa fa-level-up toggle"></i>-->
+                <!--</div>-->
+                <!--<div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font"-->
+                     <!--ng-class="{true: 'active', false: ''}[dashboard.view.following]" ng-click="dashboard.view.following = !dashboard.view.following" data-type="3">-->
+                    <!--<i class="fa fa-arrow-left toggle"></i>-->
+                <!--</div>-->
+                <!--<div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font"-->
+                     <!--ng-class="{true: 'active', false: ''}[dashboard.view.unfollowing]" ng-click="dashboard.view.unfollowing = !dashboard.view.unfollowing" data-type="4">-->
+                    <!--<i class="fa fa-level-down toggle"></i>-->
+                <!--</div>-->
+                <!--<div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font"-->
+                     <!--ng-class="{true: 'active', false: ''}[dashboard.view.followback]" ng-click="dashboard.view.followback = !dashboard.view.followback" data-type="5">-->
+                    <!--<i class="fa fa-exchange toggle"></i>-->
+                <!--</div>-->
+                <!--<div data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font"-->
+                     <!--ng-class="{true: 'active', false: ''}[dashboard.view.like]" ng-click="dashboard.view.like = !dashboard.view.like" data-type="6">-->
+                    <!--<i class="fa fa-thumbs-up toggle"></i>-->
+                <!--</div>-->
+            </div>
+
+            <div data-action="minimize" data-original-title="Minimize" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-minus3"></i> </div>
+
+            <!--<div data-action="refresh"  data-original-title="Refresh" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font"> <i class="icon-cycle"></i> </div>-->
+            <!--<div data-original-title="Config" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon smaller-font">-->
+                <!--<div class="menu-trigger" data-action="click-trigger"> <i class="icon-cog"></i> </div>-->
+                <!--<div data-action="click-target" class="vd_mega-menu-content  width-xs-2  left-xs">-->
+                    <!--<div class="child-menu">-->
+                        <!--<div class="content-list content-menu">-->
+                            <!--<ul class="list-wrapper pd-lr-10">-->
+                                <!--<li> <a href="#"> <div class="menu-icon"><i class=" fa fa-tasks"></i></div> <div class="menu-text">Follow</div> </a> </li>-->
+                                <!--<li class="line"></li>-->
+                                <!--<li> <a href="#"> <div class="menu-icon"><i class=" fa fa-user"></i></div> <div class="menu-text">Like</div> </a> </li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div data-action="close" data-original-title="Close" data-toggle="tooltip" data-placement="bottom" class=" menu entypo-icon"> <i class="icon-cross"></i> </div>-->
+        </div>
+    </div>
+    <div class="panel-body-list">
+        <div class="content-list content-image menu-action-right">
+            <div id="dash-scroll" data-rel="scroll" data-scrollheight="400">
+                <ul class="list-wrapper pd-lr-15">
+
+                    <!-- loop -->
+
+                    <li ng-repeat="message in dashboard.data.message" class="type{{message.type}}">
+                        <div class="menu-icon">
+
+                            <!-- if -->
+
+                            <a ng-if="message.type==6" target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">
+                                <img ng-src="{{ message.fan_profile }}">
+                            </a>
+                            <a ng-if="message.type>0 && message.type<6" target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">
+                                <img ng-src="{{ message.fan_profile }}">
+                            </a>
+                            <i ng-if="message.type>=21" class=" fa fa-cogs"></i>
+
+                            <!-- end if -->
+
+                        </div>
+
+                        <!-- if -->
+
+                        <div ng-if="message.type==6" class="menu-text">
+                            <i class="fa fa-thumbs-up"></i> <b>{{ message.brand_name }}</b> liked {{ message.count }} media of <a target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">{{ message.fan_name }}</a>
+                        </div>
+
+                        <div ng-if="message.type>0 && message.type<6" class="menu-text">
+                            <i ng-if="message.type == 1" class="fa fa-arrow-right" ng-class="{1:'green'}[message.whereForm]"></i>
+                            <i ng-if="message.type == 2" class="fa fa-level-up" ng-class="{1:'green'}[message.whereForm]"></i>
+                            <i ng-if="message.type == 3" class="fa fa-arrow-left" ng-class="{1:'green'}[message.whereForm]"></i>
+                            <i ng-if="message.type == 4" class="fa fa-level-down" ng-class="{1:'green'}[message.whereForm]"></i>
+                            <i ng-if="message.type == 5" class="fa fa-exchange" ng-class="{1:'green'}[message.whereForm]"></i>
+                            <b>{{ message.brand_name }}</b> {{ message.action }} <a target="_blank" href="{{dashboard.url.viewer}}user/{{ message.fan_id }}">{{ message.fan_name }}</a>
+                        </div>
+
+                        <div ng-if="message.type>=21" class="menu-text">
+                            {{ message.message }}
+                        </div>
+
+                        <!-- end if -->
+
+                        <div class="menu-text">
+                            <div class="menu-info">
+                                <span am-time-ago="message.time" class="menu-date"></span><span class="menu-date run-time"> ({{ message.run_time }}) </span>
+                            </div>
+                        </div>
+                        <div class="menu-action">
+                            <div class="menu-action-icon vd_red"   data-original-title="Reject" data-rel="tooltip-bottom">
+                                <i class="fa fa-times"></i>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- end loop -->
+
+                </ul>
+            </div>
+            <div class="closing text-center">
+                <a href="#">See All Recent Reviews <i class="fa fa-angle-double-right"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+</div> <!-- tabs-widget -->

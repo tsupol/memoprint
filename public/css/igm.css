@@ -1,0 +1,51 @@
+.insta-wrapper .elem { background: #ffffff; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05); border-radius: 2px; font-size: 14px; float: left; width: 100%; padding: 4px; margin: 15px 0;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;  }
+.insta-wrapper .elem p { float: left; margin: 0 }
+.elem .elem-header, .elem-img { float: left; clear: both; }
+.elem .elem-header { margin: 8px 0px 12px 10px; }
+.elem .elem-footer { margin: 8px 10px 6px 10px; float: right; clear: both; }
+.elem .elem-footer>i { margin: 0 4px; }
+.elem .elem-footer>i.liked { color: #F85D2C; }
+.elem .elem-header>img { width:24px; height: 24px; border-radius: 12px; margin-right: 6px; float:left; border:1px solid #ddd; }
+.elem .elem-img { width: 100%; display: block; }
+.elem .elem-img>img { width: 100%; }
+
+
+
+/* navigation */
+
+.vd_menu ul li .child-menu ul li.active { background-color: #3e7258; }
+
+/* sticky footer */
+
+html, body { height: 100% !important; }
+.vd_body { min-height: 100% !important; position: relative; }
+.vd_body>.content { margin-bottom: -43px; position: relative; }
+#push, #footer { height: 43px; }
+
+/* userpage */
+
+.user-img { float: left; width: 78px; height: 78px; border-radius: 39px; margin-right: 15px; }
+.user-detail { float: left; width: 80%; margin-left: 10px; }
+.user-detail>p { float: left; clear: both; margin-bottom: 2px; line-height: 18px; }
+.user-buttons .btn { float: right; font-size: 14px; min-width:150px; min-height: 71px; margin: 0 0 0 15px; }
+.user-buttons .btn { float: right; font-size: 14px; min-width:150px; min-height: 71px; margin: 0 0 0 15px; }
+.user-buttons .btn>p { font-size: 22px; margin-bottom: 0; }
+.tag-title { font-size: 32px; margin-top: 15px; }
+.tag-title>i { margin-right: 15px; }
+
+/* search */
+
+.user-elem { float: left; clear: both; margin: 0 0 15px 0; }
+.user-elem>img { float: left; width: 50px; height: 50px; border-radius: 25px; margin-right: 15px; }
+.user-elem>i { font-size: 22px; line-height: 50px; margin-right: 15px; float: left; }
+.user-elem>p { float: left; margin: 0; line-height: 50px; font-size: 16px; font-weight: bold; }
+.user-elem>p>span { font-weight: normal; }
+
+/* dashboard */
+/* activity */
+.vd_panel-menu div.filter-btns div.active { color: #1FAE66; }
+i.green { color: #1fae66; }
+.filter-btns { color: #AAA; float: left; margin-right: 15px; }

@@ -1,0 +1,16 @@
+<div class="vd_content-section clearfix">
+    <div class="row">
+        <div class="col-md-12">
+            <follower-chart ng-if="dashboard.loaded.followerChart"></follower-chart>
+        </div>
+        <div class="col-md-6">
+            <activity></activity>
+        </div>
+        <div class="col-md-6">
+            <activity type="task"></activity>
+        </div>
+        <div class="col-md-6">
+            <activetime ng-if="dashboard.loaded.activeTime"></activetime>
+        </div>
+    </div>
+</div>

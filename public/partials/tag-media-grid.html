@@ -1,0 +1,55 @@
+<div class="vd_title-section clearfix">
+    <div class="insta-wrapper row">
+        <div class="col-md-5">
+            <h3 class="menu-trigger tag-title" data-action="click-trigger"><i class="fa fa-tag" data-action="click-trigger"></i>{{ insta.base.media.tag.data.name }}</h3>
+            <div data-action="click-target" class="vd_mega-menu-content  width-xs-2  left-xs">
+                <div class="child-menu">
+                    <div class="content-list content-menu">
+                        <ul class="list-wrapper pd-lr-10">
+                            <li ng-repeat="tag in insta.tags">
+                                <a href="#/tag/{{ tag[0] }}">{{ tag[0] }} ({{ tag[1] }})</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 user-buttons">
+            <button type="button" class="btn vd_btn vd_bg-green btn-lg"><p>{{ insta.base.media.tag.data.media_count }}</p>media</button>
+        </div>
+    </div>
+</div>
+
+<!-- Media Loop -->
+
+<div class="vd_content-section clearfix">
+    <div class="insta-wrapper row" infinite-scroll="insta.loadMore()" infinite-scroll-disabled='insta.base.loading' infinite-scroll-distance="0">
+        <div class="col-sm-4 col-md-2" ng-repeat="media in insta.base.media.data">
+            <div class="elem">
+                <a class="elem-header" href="#/user/{{ media.user.id }}">
+                    <img ng-src="{{ media.user.profile_picture }}">
+                    <p>{{ media.user.username }}</p>
+                </a>
+                <a class="elem-img" target="_blank" href="{{ media.link }}">
+                    <img ng-src="{{ media.images.thumbnail.url }}">
+                </a>
+                <div class="elem-footer">
+                    <i class="fa fa-fw fa-heart"></i>{{ media.likes.count }}
+                    <i class="fa fa-fw fa-comment"></i>{{ media.comments.count }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- End Media Loop -->
+
+<div ng-show="insta.base.loading" id="loader-cont">
+    <div class="spinwrap">
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+</div>
